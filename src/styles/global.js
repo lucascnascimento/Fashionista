@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { Normalize } from "styled-normalize";
 
-import styled from "styled-components";
-
 export const GlobalStyle = createGlobalStyle`
   ${Normalize}
 
@@ -15,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body{
   -webkit-font-smoothing: antialiased;
+  background:#f8f8f8
   }
 
   body, button, input{
