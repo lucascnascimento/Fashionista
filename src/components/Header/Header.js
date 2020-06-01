@@ -1,7 +1,7 @@
 import React from "react";
 
 import { MdSearch, MdShoppingCart } from "react-icons/md";
-import { Container, Topbar, Logo, Menu, CountProduct } from "./styles";
+import { Container, Topbar, Logo, Menu, ProductCounter } from "./styles";
 
 function Header() {
   return (
@@ -15,7 +15,7 @@ function Header() {
           </button>
           <button>
             <MdShoppingCart size={24} color={"black"} c />
-            <CountProduct>3</CountProduct>
+            <ProductCounter>3</ProductCounter>
           </button>
         </Menu>
       </Container>
