@@ -16,6 +16,10 @@ export const GlobalStyle = createGlobalStyle`
   background:#f8f8f8
   }
 
+  html {
+  overflow-y: scroll;
+  }
+
   body, button, input{
     font: 14px sans-serif;
   }
