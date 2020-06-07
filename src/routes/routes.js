@@ -9,7 +9,7 @@ const routes = () => (
     <Route exact path="/">
       <ProductList />
     </Route>
-    <Route path="/product">
+    <Route path="/product/:name">
       <ProductView />
     </Route>
   </Switch>
