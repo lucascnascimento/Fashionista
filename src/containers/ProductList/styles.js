@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import { device } from "../../styles/device";
+import { device } from "../../styles/stylesConsts";
 
 export const Container = styled.section`
-  padding: 40px 20px;
+  padding: 80px 20px;
   max-width: 1100px;
   margin: 0 auto;
 

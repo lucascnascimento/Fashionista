@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import uniqid from "uniqid";
 
 import api from "../../services/api";
 
@@ -28,7 +29,9 @@ function ProductList() {
         {loading ? (
           <Loading />
         ) : (
-          productList.map((product) => <ProductCard data={product} />)
+          productList.map((product) => (
+            <ProductCard data={product} key={uniqid()} />
+          ))
         )}
       </Grid>
     </Container>
