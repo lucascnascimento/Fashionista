@@ -1,19 +1,29 @@
 import React from "react";
+import { connect } from "react-redux";
+import { openSidebar } from "../../store/modules/sidebar/actions";
 
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import { Container, Topbar, Logo, Menu, ProductCounter } from "./styles";
 
-function Header() {
+function Header({ openSidebar }) {
   return (
     <Topbar>
       <Container>
         <Logo to="/">FASHIONISTA</Logo>
 
         <Menu>
-          <button>
+          <button
+            onClick={() => {
+              openSidebar("SEARCH");
+            }}
+          >
             <MdSearch size={24} color={"black"} />
           </button>
-          <button>
+          <button
+            onClick={() => {
+              openSidebar("CART");
+            }}
+          >
             <MdShoppingCart size={24} color={"black"} c />
             <ProductCounter>3</ProductCounter>
           </button>
@@ -23,4 +33,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default connect(null, { openSidebar })(Header);
