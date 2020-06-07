@@ -1,23 +1,28 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 import { GlobalStyle } from "./styles/global";
 import Header from "./components/Header";
 import Sidebar from "./containers/Sidebar";
-import Backdrop from "./components/Backdrop";
 
 import Routes from "./routes/routes";
 
-function App() {
+function App({ component }) {
   return (
     <BrowserRouter>
       <GlobalStyle />
       <Header />
-      {/* <Sidebar /> */}
-      {/* <Backdrop /> */}
+      {component === "SEARCH" && <Sidebar caller={component} />}
+      {component === "CART" && <Sidebar caller={component} />}
       <Routes />
     </BrowserRouter>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  const { component } = state.sidebar;
+  return { component };
+};
+
+export default connect(mapStateToProps)(App);
