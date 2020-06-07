@@ -13,18 +13,20 @@ import {
 
 function ProductCard({ data }) {
   return (
-    <Card>
+    <Card to={`/product/${data.name}`}>
       <ImgWrapper>
         {data.image ? (
           <img src={data.image} alt={data.name} />
         ) : (
           <img src={img} alt={data.name} />
         )}
-        <DiscountTag hasDiscount={true}>-50%</DiscountTag>
+        <DiscountTag>{data.discount_percentage}</DiscountTag>
       </ImgWrapper>
       <span className="card__name">{data.name}</span>
       <PriceWrapper>
-        <RegularPrice hasDiscount={true}>{data.regular_price}</RegularPrice>
+        <RegularPrice hasDiscount={data.discount_percentage}>
+          {data.regular_price}
+        </RegularPrice>
         <ActualPrice>{data.actual_price}</ActualPrice>
       </PriceWrapper>
     </Card>

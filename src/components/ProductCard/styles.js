@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Card = styled.div`
+import { DefaultDiscountTag } from "../../styles/defaultComponents";
+
+export const Card = styled(Link)`
   max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 
   .card__name {
     padding: 10px 5px 0;
@@ -22,13 +26,9 @@ export const ImgWrapper = styled.div`
   }
 `;
 
-export const DiscountTag = styled.div`
-  display: ${(props) => (props.hasDiscount ? "inline-block" : "none")};
-  position: absolute;
-  background: black;
+export const DiscountTag = styled(DefaultDiscountTag)`
   top: 0;
   right: 0;
-  color: white;
 `;
 
 export const PriceWrapper = styled.div`
@@ -47,5 +47,6 @@ export const RegularPrice = styled.span`
 `;
 
 export const ActualPrice = styled.span`
+  color: #222;
   padding: 0 5px;
 `;
