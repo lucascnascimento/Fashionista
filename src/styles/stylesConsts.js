@@ -1,4 +1,4 @@
-const size = {
+export const sizes = {
   small: "300px",
   medium: "600px",
   large: "900px",
@@ -14,6 +14,14 @@ const size = {
 };
 
 export const device = {
-  medium: `(min-width: ${size.medium})`,
-  large: `(min-width: ${size.large})`,
+  medium: `(min-width: ${sizes.medium})`,
+  large: `(min-width: ${sizes.large})`,
+};
+
+export const colors = {
+  bgGray: "f8f8f8",
+  lineGray: "#ccc",
+  mediumGray: "#888",
+  darkGray: "#444",
+  veryDarkGray: "#222",
 };
