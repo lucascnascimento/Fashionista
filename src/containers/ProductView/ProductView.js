@@ -50,7 +50,8 @@ function ProductView({ addItem }) {
         actual_price: product.actual_price,
         installments: product.installments,
         image: product.image,
-        size: product.size,
+        size: productSize,
+        amount: 1,
       };
       addItem(productToCart);
     } else {
