@@ -1,4 +1,9 @@
-import { ADD_ITEM, REMOVE_ITEM } from "../constants";
+import {
+  ADD_ITEM,
+  REMOVE_ITEM,
+  INCREMENT_ITEM,
+  DECREMENT_ITEM,
+} from "../constants";
 
 function cart(state = [], action) {
   switch (action.type) {
@@ -29,7 +34,49 @@ function cart(state = [], action) {
           product.name === action.item.name && product.size === action.item.size
       );
 
-      return state.splice(itemIndex, 1);
+      const newState = [...state];
+
+      newState.splice(itemIndex, 1);
+
+      return newState;
+    }
+
+    case INCREMENT_ITEM: {
+      const itemIndex = state.findIndex(
+        (product) =>
+          product.name === action.name && product.size === action.size
+      );
+
+      if (itemIndex > -1) {
+        return state.map((product) => {
+          if (product.name === action.name && product.size === action.size) {
+            return { ...product, amount: action.amount };
+          }
+          return product;
+        });
+      }
+
+      return state;
+    }
+
+    case DECREMENT_ITEM: {
+      if (action.amount < 1) return state;
+
+      const itemIndex = state.findIndex(
+        (product) =>
+          product.name === action.name && product.size === action.size
+      );
+
+      if (itemIndex > -1) {
+        return state.map((product) => {
+          if (product.name === action.name && product.size === action.size) {
+            return { ...product, amount: action.amount };
+          }
+          return product;
+        });
+      }
+
+      return state;
     }
 
     default:
