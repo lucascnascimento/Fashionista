@@ -37,10 +37,7 @@ export const CardSize = styled.span`
   font-size: small;
 `;
 
-export const CardAmount = styled.span`
-  grid-column: 1;
-  grid-row: 3;
-`;
+export const CardAmount = styled.span``;
 
 export const CardPrice = styled.span`
   grid-column: 2;
@@ -64,3 +61,12 @@ export const RemoveButton = styled.section`
     font-size: small;
   }
 `;
+
+export const CounterWrapper = styled.div`
+  grid-column: 1;
+  grid-row: 3;
+`;
+
+export const PlusButton = styled.button``;
+
+export const MinusButton = styled.button``;

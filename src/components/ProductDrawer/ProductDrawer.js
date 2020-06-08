@@ -1,5 +1,7 @@
 import React from "react";
 
+import Counter from "./Counter";
+
 import {
   ProductDrawerCard,
   CardMain,
@@ -12,25 +14,28 @@ import {
   RemoveButton,
 } from "./styles";
 
-function ProductDrawer() {
+function ProductDrawer({ item, caller, removeItem }) {
   return (
     <ProductDrawerCard>
       <CardMain>
-        <img
-          src="https://viniciusvinna.netlify.app/assets/api-fashionista/20002605_615_catalog_1.jpg"
-          alt=""
-        />
+        <img src={item.image} alt={item.name} />
         <CardGrid>
-          <CardTitle>VESTIDO TRANSPASSE BOW</CardTitle>
-          <CardSize>Tam.: G</CardSize>
-          <CardAmount>2</CardAmount>
-          <CardPrice>R$ 199,90</CardPrice>
-          <CardInstallments>3x R$ 66,63</CardInstallments>
+          <CardTitle>{item.name}</CardTitle>
+          <CardSize>Tam.: {item.size}</CardSize>
+          <CardAmount>{item.amount}</CardAmount>
+          {caller === "SEARCH" ? null : (
+            <Counter amount={item.amount} name={item.name} size={item.size} />
+          )}
+          <CardPrice>{item.actual_price}</CardPrice>
+          <CardInstallments>{item.installments}</CardInstallments>
         </CardGrid>
       </CardMain>
-      <RemoveButton>
-        <button>Remover Item</button>
-      </RemoveButton>
+
+      {caller === "SEARCH" ? null : (
+        <RemoveButton>
+          <button onClick={() => removeItem(item)}>Remover Item</button>
+        </RemoveButton>
+      )}
     </ProductDrawerCard>
   );
 }
