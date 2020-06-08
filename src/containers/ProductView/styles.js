@@ -35,6 +35,6 @@ export const ProductInstallments = styled.span``;
 
 export const Sizes = styled.div``;
 
-export const ProductSize = styled.div``;
+export const ProductSize = styled.button``;
 
 export const AddToCartBtn = styled.button``;
