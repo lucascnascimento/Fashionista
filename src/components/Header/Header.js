@@ -5,7 +5,7 @@ import { openSidebar } from "../../store/modules/sidebar/actions";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import { Container, Topbar, Logo, Menu, ProductCounter } from "./styles";
 
-function Header({ openSidebar }) {
+function Header({ openSidebar, numOfitems }) {
   return (
     <Topbar>
       <Container>
@@ -24,8 +24,8 @@ function Header({ openSidebar }) {
               openSidebar("CART");
             }}
           >
-            <MdShoppingCart size={24} color={"black"} c />
-            <ProductCounter>3</ProductCounter>
+            <MdShoppingCart size={24} color={"black"} />
+            {numOfitems > 0 && <ProductCounter>{numOfitems}</ProductCounter>}
           </button>
         </Menu>
       </Container>
@@ -33,4 +33,14 @@ function Header({ openSidebar }) {
   );
 }
 
-export default connect(null, { openSidebar })(Header);
+const mapStateToProps = (state) => {
+  const { cart } = state;
+
+  const numOfitems = cart.reduce((acc, item) => {
+    return acc + item.amount;
+  }, 0);
+
+  return { numOfitems };
+};
+
+export default connect(mapStateToProps, { openSidebar })(Header);
