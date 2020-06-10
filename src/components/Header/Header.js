@@ -2,14 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 import { openSidebar } from "../../store/modules/sidebar/actions";
 
-import { MdSearch, MdShoppingCart } from "react-icons/md";
-import { Container, Topbar, Logo, Menu, ProductCounter } from "./styles";
+import {
+  Container,
+  Topbar,
+  Logo,
+  Menu,
+  ProductCounter,
+  MDSearch,
+  MDShoopingCart,
+} from "./styles";
 
 function Header({ openSidebar, numOfitems }) {
   return (
     <Topbar>
       <Container>
-        <Logo to="/">FASHIONISTA</Logo>
+        <Logo to="/">Fashionista</Logo>
 
         <Menu>
           <button
@@ -17,14 +24,14 @@ function Header({ openSidebar, numOfitems }) {
               openSidebar("SEARCH");
             }}
           >
-            <MdSearch size={24} color={"black"} />
+            <MDSearch />
           </button>
           <button
             onClick={() => {
               openSidebar("CART");
             }}
           >
-            <MdShoppingCart size={24} color={"black"} />
+            <MDShoopingCart />
             {numOfitems > 0 && <ProductCounter>{numOfitems}</ProductCounter>}
           </button>
         </Menu>
