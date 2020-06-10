@@ -24,7 +24,7 @@ function ProductList() {
 
   return (
     <Container>
-      <div>{productList.length} items</div>
+      <div>Moda Feminina: {productList.length} items</div>
       <Grid>
         {loading ? (
           <Loading />

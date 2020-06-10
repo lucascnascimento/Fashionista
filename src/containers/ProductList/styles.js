@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
-import { device } from "../../styles/stylesConsts";
+import { device, grayColors } from "../../styles/stylesConsts";
 
 export const Container = styled.section`
-  padding: 80px 20px;
+  padding: 0 20px;
   max-width: 1100px;
   margin: 0 auto;
 
   > div {
-    color: #888;
+    color: ${grayColors.darkGray};
     margin-bottom: 10px;
+    margin-top: 10px;
+
+    font-weight: bold;
+
+    @media ${device.biggerThanMedium} {
+      font-size: 1.3rem;
+    }
   }
 `;
 
@@ -18,11 +25,11 @@ export const Grid = styled.section`
   grid-gap: 14px;
   grid-template-columns: repeat(2, 1fr);
 
-  @media ${device.medium} {
+  @media ${device.biggerThanMedium} {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media ${device.large} {
+  @media ${device.biggerThanLarge} {
     grid-template-columns: repeat(4, 1fr);
   }
 `;
