@@ -9,6 +9,7 @@ import {
   ActualPrice,
   ImgWrapper,
   PriceWrapper,
+  ShowProduct,
 } from "./styles";
 
 function ProductCard({ data }) {
@@ -20,8 +21,10 @@ function ProductCard({ data }) {
         ) : (
           <img src={img} alt={data.name} />
         )}
+        <ShowProduct>Ver Produto</ShowProduct>
         <DiscountTag>{data.discount_percentage}</DiscountTag>
       </ImgWrapper>
+
       <span className="card__name">{data.name}</span>
       <PriceWrapper>
         <RegularPrice hasDiscount={data.discount_percentage}>

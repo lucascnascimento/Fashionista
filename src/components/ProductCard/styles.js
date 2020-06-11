@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { DefaultDiscountTag } from "../../styles/defaultComponents";
+import { grayColors } from "../../styles/stylesConsts";
+
+import {
+  DefaultDiscountTag,
+  DefaultImgWrapper,
+} from "../../styles/defaultComponents";
 
 export const Card = styled(Link)`
   max-width: 100%;
@@ -11,18 +16,41 @@ export const Card = styled(Link)`
   text-decoration: none;
 
   .card__name {
-    padding: 10px 5px 0;
-    font-weight: bold;
-    color: #444;
+    padding: 5px 5px 0;
+    color: black;
+    text-align: center;
   }
 `;
 
-export const ImgWrapper = styled.div`
-  display: flex;
-  position: relative;
+export const ShowProduct = styled.span`
+  border: 1px solid white;
+  border-radius: 3px;
+  display: none;
+  position: absolute;
+  padding: 10px;
+  color: white;
+  padding: 8px;
+  font-size: 1rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+`;
 
+export const ImgWrapper = styled(DefaultImgWrapper)`
   img {
-    width: 100%;
+    filter: brightness(100%);
+  }
+
+  &:hover {
+    img {
+      filter: brightness(40%);
+      transition: filter 0.2s linear;
+    }
+
+    & ${ShowProduct} {
+      display: block;
+    }
   }
 `;
 
@@ -34,19 +62,20 @@ export const DiscountTag = styled(DefaultDiscountTag)`
 export const PriceWrapper = styled.div`
   display: flex;
   align-items: baseline;
-  padding: 5px 0;
+  margin-top: auto;
 `;
 
 export const RegularPrice = styled.span`
   display: ${(props) => (props.hasDiscount ? "inline-block" : "none")};
   color: blue;
-  font-size: 12px;
-  color: #888;
+  font-size: 1rem;
+  color: ${grayColors.mediumGray};
   text-decoration: line-through;
-  padding: 0 5px;
+  padding: 0 5px 0;
 `;
 
 export const ActualPrice = styled.span`
-  color: #222;
-  padding: 0 5px;
+  color: ${grayColors.veryDarkGray};
+  font-size: 1rem;
+  padding: 0 5px 0;
 `;
