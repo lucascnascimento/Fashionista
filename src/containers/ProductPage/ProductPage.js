@@ -17,11 +17,11 @@ import {
   DiscountTag,
 } from "./styles";
 
-import img from "../../assets/images/imgNaoDisponivel.png";
+import imgNotAvailable from "../../assets/images/imgNaoDisponivel.png";
 
 import { DefaultImgWrapper } from "../../styles/defaultComponents";
 
-function ProductView({ addItem }) {
+function ProductPage({ addItem }) {
   const { name } = useParams();
   const [product, setProduct] = useState({});
   const [productSize, setProductSize] = useState("");
@@ -73,7 +73,7 @@ function ProductView({ addItem }) {
         {product.image ? (
           <img src={product.image} alt={product.name} />
         ) : (
-          <img src={img} alt={product.name} />
+          <img src={imgNotAvailable} alt={product.name} />
         )}
         <DiscountTag>{product.discount_percentage}</DiscountTag>
       </DefaultImgWrapper>
@@ -117,26 +117,4 @@ function ProductView({ addItem }) {
   ) : null;
 }
 
-export default connect(null, { addItem })(ProductView);
-
-// const mockProduct = {
-//   actual_price: "R$ 149,90",
-//   code_color: "20002581_614",
-//   color: "MINI FOLK",
-//   color_slug: "mini-folk",
-//   discount_percentage: "-23%",
-//   image:
-//     "https://viniciusvinna.netlify.app/assets/api-fashionista/20002581_614_catalog_1.jpg",
-//   installments: "3x R$ 49,97",
-//   name: "BATA DECOTE FLUID",
-//   on_sale: false,
-//   regular_price: "R$ 149,90",
-//   sizes: [
-//     { available: true, size: "PP", sku: "5723_40130843_0_PP" },
-//     { available: true, size: "P", sku: "5723_40130843_0_P" },
-//     { available: true, size: "M", sku: "5723_40130843_0_M" },
-//     { available: true, size: "G", sku: "5723_40130843_0_G" },
-//     { available: true, size: "GG", sku: "5723_40130843_0_GG" },
-//   ],
-//   style: "20002581",
-// };
+export default connect(null, { addItem })(ProductPage);

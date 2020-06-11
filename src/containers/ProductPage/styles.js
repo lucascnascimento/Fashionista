@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { DefaultDiscountTag } from "../../styles/defaultComponents";
 
-import { device, sizes, colors } from "../../styles/stylesConsts";
+import { device, sizes, grayColors } from "../../styles/stylesConsts";
 
 export const Container = styled.section`
   padding: 80px 20px;
@@ -25,7 +25,7 @@ export const DiscountTag = styled(DefaultDiscountTag)`
 export const ProductInfo = styled.form``;
 
 export const ProductTitle = styled.h2`
-  color: ${colors.veryDarkGray};
+  color: ${grayColors.veryDarkGray};
   margin: 14px 0;
 `;
 
