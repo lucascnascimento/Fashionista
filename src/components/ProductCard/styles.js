@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { grayColors } from "../../styles/stylesConsts";
+import { grayColors, device } from "../../styles/stylesConsts";
 
 import {
   DefaultDiscountTag,
@@ -27,14 +27,18 @@ export const ShowProduct = styled.span`
   border-radius: 3px;
   display: none;
   position: absolute;
-  padding: 10px;
   color: white;
-  padding: 8px;
-  font-size: 1rem;
+  padding: 4px;
+  font-size: 0.5rem;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
+
+  @media ${device.biggerThanMedium} {
+    font-size: 1rem;
+    padding: 8px;
+  }
 `;
 
 export const ImgWrapper = styled(DefaultImgWrapper)`
