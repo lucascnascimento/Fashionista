@@ -7,6 +7,7 @@ import api from "../../services/api";
 
 import {
   Container,
+  ImgWrapper,
   ProductInfo,
   ProductTitle,
   ProductPrice,
@@ -15,11 +16,13 @@ import {
   ProductSize,
   AddToCartBtn,
   DiscountTag,
+  Error,
+  BackToHome,
 } from "./styles";
 
 import imgNotAvailable from "../../assets/images/imgNaoDisponivel.png";
 
-import { DefaultImgWrapper } from "../../styles/defaultComponents";
+import { ArrowBack } from "@styled-icons/material";
 
 function ProductPage({ addItem }) {
   const { name } = useParams();
@@ -69,14 +72,19 @@ function ProductPage({ addItem }) {
 
   return product.name ? (
     <Container>
-      <DefaultImgWrapper>
+      <BackToHome to="/">
+        <ArrowBack size={24} />
+        <span>Voltar para a página principal</span>
+      </BackToHome>
+
+      <ImgWrapper>
         {product.image ? (
           <img src={product.image} alt={product.name} />
         ) : (
           <img src={imgNotAvailable} alt={product.name} />
         )}
         <DiscountTag>{product.discount_percentage}</DiscountTag>
-      </DefaultImgWrapper>
+      </ImgWrapper>
 
       <ProductInfo>
         <ProductTitle>{product.name} </ProductTitle>
@@ -89,7 +97,7 @@ function ProductPage({ addItem }) {
         </ProductPrice>
 
         <Sizes>
-          <span>Escolha o tamanho</span>
+          <span>Escolha o tamanho: </span>
           <div>
             {product.sizes.map(
               (size) =>
@@ -99,6 +107,7 @@ function ProductPage({ addItem }) {
                     type="button"
                     onClick={handleSelectedSize}
                     key={size.size}
+                    className={productSize === size.size ? "active" : ""}
                   >
                     {size.size}
                   </ProductSize>
@@ -107,7 +116,7 @@ function ProductPage({ addItem }) {
           </div>
         </Sizes>
 
-        {sizeError && <p>Por favor escolha um tamanho</p>}
+        {sizeError && <Error>Por favor escolha um tamanho</Error>}
 
         <AddToCartBtn onClick={handleAddItem} type="submit">
           Adicionar ao carrinho

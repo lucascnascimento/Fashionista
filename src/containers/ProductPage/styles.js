@@ -1,19 +1,39 @@
 import styled from "styled-components";
-
-import { DefaultDiscountTag } from "../../styles/defaultComponents";
+import { Link } from "react-router-dom";
+import {
+  DefaultDiscountTag,
+  DefaultImgWrapper,
+} from "../../styles/defaultComponents";
 
 import { device, sizes, grayColors } from "../../styles/stylesConsts";
 
 export const Container = styled.section`
-  padding: 80px 20px;
+  padding: 44px 20px;
   max-width: ${sizes.maxLarge}; /*1100px*/
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
-  @media ${device.medium} {
+  @media ${device.biggerThanMedium} {
+    flex-wrap: wrap;
     flex-direction: row;
+    padding: 72px 20px;
+    justify-content: center;
+  }
+`;
+
+export const BackToHome = styled(Link)`
+  display: block;
+  padding: 8px 0px;
+  color: black;
+  text-decoration: none;
+
+  span {
+    padding: 0px 8px;
+  }
+
+  @media ${device.biggerThanMedium} {
+    width: 100%;
   }
 `;
 
@@ -22,19 +42,88 @@ export const DiscountTag = styled(DefaultDiscountTag)`
   left: 0;
 `;
 
-export const ProductInfo = styled.form``;
-
-export const ProductTitle = styled.h2`
-  color: ${grayColors.veryDarkGray};
-  margin: 14px 0;
+export const ImgWrapper = styled(DefaultImgWrapper)`
+  @media ${device.biggerThanMedium} {
+    flex: 1 1 50%;
+    max-width: 400px;
+    padding: 0 40px;
+  }
 `;
 
-export const ProductPrice = styled.span``;
+export const ProductInfo = styled.form`
+  @media ${device.biggerThanMedium} {
+    flex: 1 1 50%;
+    max-width: 400px;
+    padding: 0 40px;
+  }
+`;
 
-export const ProductInstallments = styled.span``;
+export const ProductTitle = styled.h2`
+  color: black;
+  margin: 8px 0;
 
-export const Sizes = styled.div``;
+  text-align: center;
+`;
 
-export const ProductSize = styled.button``;
+export const ProductPrice = styled.span`
+  font-size: 1.2rem;
+`;
 
-export const AddToCartBtn = styled.button``;
+export const ProductInstallments = styled.span`
+  padding: 0px 4px;
+`;
+
+export const Sizes = styled.div`
+  & > span {
+    font-size: 1rem;
+    padding: 4px 0px;
+  }
+
+  & div {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const ProductSize = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  font-size: 1rem;
+  padding: 8px;
+  margin: 8px;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    background: ${grayColors.lineGray};
+  }
+
+  &.active {
+    background: ${grayColors.lineGray};
+  }
+`;
+
+export const AddToCartBtn = styled.button`
+  background: black;
+  color: white;
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+`;
+
+export const Error = styled.div`
+  color: red;
+  font-size: 1rem;
+  padding: 4px 0px;
+`;
