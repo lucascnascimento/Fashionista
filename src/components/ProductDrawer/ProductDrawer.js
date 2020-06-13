@@ -8,7 +8,6 @@ import {
   CardGrid,
   CardTitle,
   CardSize,
-  CardAmount,
   CardPrice,
   CardInstallments,
   RemoveButton,
@@ -22,7 +21,6 @@ function ProductDrawer({ item, caller, removeItem }) {
         <CardGrid>
           <CardTitle>{item.name}</CardTitle>
           <CardSize>Tam.: {item.size}</CardSize>
-          <CardAmount>{item.amount}</CardAmount>
           {caller === "SEARCH" ? null : (
             <Counter amount={item.amount} name={item.name} size={item.size} />
           )}

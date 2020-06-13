@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { incrementItem, decrementItem } from "../../store/modules/cart/actions";
-import { AiOutlinePlusSquare, AiOutlineMinusSquare } from "react-icons/ai";
+import { AddBox, IndeterminateCheckBox } from "@styled-icons/material";
 
 import { CounterWrapper, PlusButton, MinusButton } from "./styles";
 
@@ -22,7 +22,7 @@ function Counter({ incrementItem, decrementItem, amount, name, size }) {
           decrement();
         }}
       >
-        <AiOutlineMinusSquare size={16} color={"black"} />
+        <IndeterminateCheckBox />
       </MinusButton>
       <span>{amount}</span>
       <PlusButton
@@ -31,7 +31,7 @@ function Counter({ incrementItem, decrementItem, amount, name, size }) {
           increment();
         }}
       >
-        <AiOutlinePlusSquare size={16} color={"black"} />
+        <AddBox />
       </PlusButton>
     </CounterWrapper>
   );
