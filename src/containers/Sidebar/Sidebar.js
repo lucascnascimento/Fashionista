@@ -9,7 +9,13 @@ import { FiArrowRight } from "react-icons/fi";
 import Backdrop from "../../components/Backdrop";
 import ProductDrawer from "../../components/ProductDrawer";
 
-import { SidebarContainer, Header, Footer } from "./styles";
+import {
+  SidebarContainer,
+  Header,
+  Footer,
+  Input,
+  ProductDisplay,
+} from "./styles";
 
 function Sidebar({
   caller,
@@ -60,26 +66,33 @@ function Sidebar({
         </Header>
 
         {caller === "SEARCH" && (
-          <input
-            type="search"
+          <Input
+            type="text"
             onChange={handleSearch}
             value={searchField}
-          ></input>
+            placeholder="Pesquisar"
+          ></Input>
         )}
 
-        {caller === "CART" &&
-          mCart.length > 0 &&
-          mCart.map((item) => (
-            <ProductDrawer item={item} caller="CART" removeItem={removeItem} />
-          ))}
+        <ProductDisplay>
+          {caller === "CART" &&
+            mCart.length > 0 &&
+            mCart.map((item) => (
+              <ProductDrawer
+                item={item}
+                caller="CART"
+                removeItem={removeItem}
+              />
+            ))}
 
-        {caller === "SEARCH" &&
-          productsList.length > 0 &&
-          productsList.map((item) => (
-            <Link to={`/product/${item.name}`}>
-              <ProductDrawer item={item} caller="SEARCH" />
-            </Link>
-          ))}
+          {caller === "SEARCH" &&
+            productsList.length > 0 &&
+            productsList.map((item) => (
+              <Link to={`/product/${item.name}`}>
+                <ProductDrawer item={item} caller="SEARCH" />
+              </Link>
+            ))}
+        </ProductDisplay>
 
         {caller === "CART" && (
           <Footer>
