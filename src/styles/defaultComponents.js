@@ -13,4 +13,5 @@ export const DefaultDiscountTag = styled.div`
   position: absolute;
   background: black;
   color: white;
+  padding: 0 5px 0;
 `;
