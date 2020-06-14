@@ -2,15 +2,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Search, ShoppingCart } from "@styled-icons/material";
 
-import { device, Colors, grayColors } from "../../styles/stylesConsts"; // shadesOfDarkReddishBrown
+import { device, grayColors } from "../../styles/stylesConsts"; // shadesOfDarkReddishBrown
 
 export const Topbar = styled.div`
-  border-bottom: 1px solid ${grayColors.lineGray};
-  background: white;
   position: fixed;
   top: 0;
   z-index: 1;
   width: 100%;
+  padding: 20px 0;
+  background: ${(props) => (props.isBackground ? "white" : "transparent")};
+  transition: background 0.4s ease-out;
 `;
 
 export const Container = styled.div`
@@ -32,13 +33,13 @@ export const Container = styled.div`
 
 export const Logo = styled(Link)`
   text-decoration: none;
-  color: ${Colors.color4};
+  color: black;
   font-family: Julius Sans One, sans-serif;
   font-size: 30px;
   font-weight: 500;
 
-  @media ${device.biggerThanMedium} {
-    font-size: 60px;
+  &:hover {
+    color: ${grayColors.veryDarkGray};
   }
 `;
 
@@ -58,32 +59,53 @@ export const Menu = styled.div`
     padding: 0 6px;
     cursor: pointer;
     position: relative;
+    color: black;
+
+    & span {
+      display: none;
+
+      @media ${device.biggerThanMedium} {
+        display: inline;
+      }
+
+      &:hover {
+        color: ${grayColors.veryDarkGray};
+      }
+    }
   }
 `;
 
 export const MDSearch = styled(Search)`
-  color: ${Colors.color4};
+  color: black;
   height: 18px;
 
   @media ${device.biggerThanMedium} {
-    height: 28px;
+    display: none;
+  }
+
+  &:hover {
+    color: ${grayColors.veryDarkGray};
   }
 `;
 
 export const MDShoopingCart = styled(ShoppingCart)`
-  color: ${Colors.color4};
+  color: black;
   height: 18px;
 
   @media ${device.biggerThanMedium} {
-    height: 28px;
+    display: none;
+  }
+
+  &:hover {
+    color: ${grayColors.veryDarkGray};
   }
 `;
 
 export const ProductCounter = styled.div`
-  background: ${Colors.color5};
-  color: ${Colors.color2};
-  height: 9px;
-  width: 9px;
+  background: red;
+  color: white;
+  height: 12px;
+  width: 12px;
   position: absolute;
   z-index: 2;
   bottom: 0;
@@ -92,11 +114,9 @@ export const ProductCounter = styled.div`
   padding: 1px;
   vertical-align: middle;
   text-align: center;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
 
   @media ${device.biggerThanMedium} {
-    height: 15px;
-    width: 15px;
-    font-size: 0.9rem;
+    display: none;
   }
 `;

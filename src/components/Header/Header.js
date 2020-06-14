@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { openSidebar } from "../../store/modules/sidebar/actions";
 
@@ -13,8 +13,20 @@ import {
 } from "./styles";
 
 function Header({ openSidebar, numOfitems }) {
+  const [isBackground, setIsBackground] = useState(false);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.scrollY > 10) {
+        setIsBackground(true);
+      } else {
+        setIsBackground(false);
+      }
+    };
+  }, []);
+
   return (
-    <Topbar>
+    <Topbar isBackground={isBackground}>
       <Container>
         <Logo to="/">Fashionista</Logo>
 
@@ -25,6 +37,7 @@ function Header({ openSidebar, numOfitems }) {
             }}
           >
             <MDSearch />
+            <span>PESQUISAR</span>
           </button>
           <button
             onClick={() => {
@@ -33,6 +46,7 @@ function Header({ openSidebar, numOfitems }) {
           >
             <MDShoopingCart />
             {numOfitems > 0 && <ProductCounter>{numOfitems}</ProductCounter>}
+            <span>MEU CARRINHO ({numOfitems})</span>
           </button>
         </Menu>
       </Container>
