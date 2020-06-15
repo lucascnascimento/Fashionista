@@ -8,17 +8,9 @@ import {
   DefaultImgWrapper,
 } from "../../styles/defaultComponents";
 
-export const Card = styled(Link)`
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-
-  .card__name {
-    padding: 5px 5px 0;
-    color: black;
-    text-align: center;
+export const ImgWrapper = styled(DefaultImgWrapper)`
+  img {
+    filter: brightness(100%);
   }
 `;
 
@@ -47,12 +39,21 @@ export const ShowProduct = styled.span`
   }
 `;
 
-export const ImgWrapper = styled(DefaultImgWrapper)`
-  img {
-    filter: brightness(100%);
+export const Card = styled(Link)`
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 4px 4px 4px 4px;
+
+  .card__name {
+    padding: 5px 5px 0;
+    color: black;
+    text-align: center;
   }
 
-  &:hover {
+  &:hover ${ImgWrapper} {
     img {
       filter: brightness(40%);
       transition: filter 0.2s linear;
@@ -61,6 +62,13 @@ export const ImgWrapper = styled(DefaultImgWrapper)`
     & ${ShowProduct} {
       display: block;
     }
+  }
+
+  &:hover {
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.2s linear;
   }
 `;
 
