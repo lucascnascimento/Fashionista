@@ -1,5 +1,11 @@
 import React from "react";
 
-export default function Loading() {
-  return <div>LOAJHENG</div>;
+import { Container, Spinner } from "./styles";
+
+export default function Loading({ size = 32, color = "black" }) {
+  return (
+    <Container>
+      <Spinner size={size} color={color} />
+    </Container>
+  );
 }
