@@ -17,7 +17,6 @@ export const CardMain = styled.section`
   & img {
     width: 100%;
     max-width: 110px;
-    height: auto;
   }
 `;
 
@@ -30,19 +29,15 @@ export const CardGrid = styled.div`
   width: 100%;
 `;
 
-export const CardTitle = styled.h5`
+export const CardTitle = styled.h4`
   grid-column: 1;
   grid-row: 1;
-
-  font-size: 0.9rem;
 `;
 
 export const CardSize = styled.span`
   grid-column: 1;
   grid-row: 2;
   color: ${grayColors.mediumGray};
-
-  font-size: 0.9rem;
 `;
 
 export const CardPrice = styled.span`
@@ -68,6 +63,7 @@ export const RemoveButton = styled.section`
     border: none;
     color: red;
     font-size: small;
+    font-weight: bold;
   }
 `;
 

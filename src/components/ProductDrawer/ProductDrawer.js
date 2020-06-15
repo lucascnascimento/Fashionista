@@ -13,14 +13,17 @@ import {
   RemoveButton,
 } from "./styles";
 
+import img from "../../assets/images/imgNaoDisponivel.png";
+
 function ProductDrawer({ item, caller, removeItem }) {
   return (
     <ProductDrawerCard>
       <CardMain>
-        <img src={item.image} alt={item.name} />
+        <img src={item.image || img} alt={item.name} />
         <CardGrid>
           <CardTitle>{item.name}</CardTitle>
-          <CardSize>Tam.: {item.size}</CardSize>
+
+          {caller === "SEARCH" ? null : <CardSize>Tam.: {item.size}</CardSize>}
           {caller === "SEARCH" ? null : (
             <Counter amount={item.amount} name={item.name} size={item.size} />
           )}
