@@ -91,6 +91,7 @@ function Sidebar({
               <Link
                 to={`/product/${item.name}`}
                 style={{ textDecoration: "none", color: "inherit" }}
+                onClick={() => closeSidebar()}
               >
                 <ProductDrawer item={item} caller="SEARCH" />
               </Link>
