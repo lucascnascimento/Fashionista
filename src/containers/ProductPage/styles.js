@@ -8,7 +8,7 @@ import {
 import { device, sizes, grayColors } from "../../styles/stylesConsts";
 
 export const Container = styled.section`
-  padding: 44px 20px;
+  padding: 72px 20px;
   max-width: ${sizes.maxLarge}; /*1100px*/
   margin: 0 auto;
   display: flex;
@@ -17,7 +17,6 @@ export const Container = styled.section`
   @media ${device.biggerThanMedium} {
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 72px 20px;
     justify-content: center;
   }
 `;
@@ -28,8 +27,9 @@ export const BackToHome = styled(Link)`
   color: black;
   text-decoration: none;
 
-  span {
+  & span {
     padding: 0px 8px;
+    text-transform: uppercase;
   }
 
   @media ${device.biggerThanMedium} {
@@ -66,7 +66,9 @@ export const ProductTitle = styled.h2`
 `;
 
 export const ProductPrice = styled.span`
-  font-size: 1.2rem;
+  font-size: 14px;
+  padding: 4px 0;
+  display: inline-block;
 `;
 
 export const ProductInstallments = styled.span`
@@ -75,8 +77,9 @@ export const ProductInstallments = styled.span`
 
 export const Sizes = styled.div`
   & > span {
-    font-size: 1rem;
-    padding: 4px 0px;
+    font-size: 14px;
+    padding: 4px 0 0 0;
+    display: inline-block;
   }
 
   & div {
@@ -111,7 +114,7 @@ export const ProductSize = styled.button`
 export const AddToCartBtn = styled.button`
   background: black;
   color: white;
-  font-size: 1.5rem;
+  font-size: 18px;
   width: 100%;
   padding: 8px;
   border: none;

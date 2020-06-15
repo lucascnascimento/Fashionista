@@ -5,6 +5,8 @@ import { addItem } from "../../store/modules/cart/actions";
 
 import api from "../../services/api";
 
+import Loading from "../../components/Loading";
+
 import {
   Container,
   ImgWrapper,
@@ -123,7 +125,9 @@ function ProductPage({ addItem }) {
         </AddToCartBtn>
       </ProductInfo>
     </Container>
-  ) : null;
+  ) : (
+    <Loading />
+  );
 }
 
 export default connect(null, { addItem })(ProductPage);
