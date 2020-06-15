@@ -70,7 +70,7 @@ function Sidebar({
             type="text"
             onChange={handleSearch}
             value={searchField}
-            placeholder="Pesquisar"
+            placeholder="Digite aqui o que procura"
           ></Input>
         )}
 
@@ -88,7 +88,10 @@ function Sidebar({
           {caller === "SEARCH" &&
             productsList.length > 0 &&
             productsList.map((item) => (
-              <Link to={`/product/${item.name}`}>
+              <Link
+                to={`/product/${item.name}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
                 <ProductDrawer item={item} caller="SEARCH" />
               </Link>
             ))}

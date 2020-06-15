@@ -44,7 +44,7 @@ export const Header = styled.header`
 
 export const Input = styled.input`
   width: 100%;
-  padding: 4px;
+  padding: 8px;
   font-size: 1.2rem;
   border: none;
   border-bottom: 1px #ccc solid;
