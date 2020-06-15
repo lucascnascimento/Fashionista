@@ -25,15 +25,15 @@ function ProductList() {
   return (
     <Container>
       <div>Moda Feminina: {productList.length} items</div>
-      <Grid>
-        {loading ? (
-          <Loading />
-        ) : (
-          productList.map((product) => (
+      {loading ? (
+        <Loading />
+      ) : (
+        <Grid>
+          {productList.map((product) => (
             <ProductCard data={product} key={uniqid()} />
-          ))
-        )}
-      </Grid>
+          ))}
+        </Grid>
+      )}
     </Container>
   );
 }

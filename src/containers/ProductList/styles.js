@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { device, grayColors } from "../../styles/stylesConsts";
 
 export const Container = styled.section`
-  padding: 0 20px;
+  padding: 0 20px 24px;
   max-width: 1100px;
   margin: 0 auto;
 
@@ -11,12 +11,7 @@ export const Container = styled.section`
     color: ${grayColors.darkGray};
     margin-bottom: 10px;
     margin-top: 10px;
-
-    font-weight: bold;
-
-    @media ${device.biggerThanMedium} {
-      font-size: 1.3rem;
-    }
+    font-size: 14px;
   }
 `;
 
