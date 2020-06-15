@@ -29,15 +29,21 @@ export const ShowProduct = styled.span`
   position: absolute;
   color: white;
   padding: 4px;
-  font-size: 0.5rem;
+
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
 
+  font-size: 2vw;
+  padding: 8px;
+
   @media ${device.biggerThanMedium} {
-    font-size: 1rem;
-    padding: 8px;
+    font-size: 1.4vw;
+  }
+
+  @media ${device.biggerThanLarge} {
+    font-size: 1vw;
   }
 `;
 
@@ -67,6 +73,7 @@ export const PriceWrapper = styled.div`
   display: flex;
   align-items: baseline;
   margin-top: auto;
+  padding: 2px 0;
 `;
 
 export const RegularPrice = styled.span`
