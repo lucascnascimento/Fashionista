@@ -21,10 +21,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, button, input{
-    font: 14px Archivo Narrow, sans-serif;
+    font: 12px Montserrat, sans-serif;
   }
 
   button{
     cursor: pointer;
   }
+
 `;
