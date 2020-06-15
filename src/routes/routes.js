@@ -2,15 +2,16 @@ import { Switch, Route } from "react-router-dom";
 import React from "react";
 
 import ProductList from "../containers/ProductList";
-import ProductView from "../containers/ProductView";
+import ProductPage from "../containers/ProductPage";
+import HomePage from "../containers/HomePage";
 
 const routes = () => (
   <Switch>
     <Route exact path="/">
-      <ProductList />
+      <HomePage />
     </Route>
     <Route path="/product/:name">
-      <ProductView />
+      <ProductPage />
     </Route>
   </Switch>
 );
