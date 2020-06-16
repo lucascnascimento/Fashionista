@@ -57,6 +57,14 @@ export const ProductDisplay = styled.div`
   height: 100%;
 `;
 
+export const EmptyCart = styled.div`
+  font-size: 14px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Footer = styled.footer`
   bottom: 0;
   left: 0;

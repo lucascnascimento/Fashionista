@@ -5,7 +5,7 @@ import { removeItem } from "../../store/modules/cart/actions";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
 
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowLeft } from "react-icons/fi";
 import Backdrop from "../../components/Backdrop";
 import ProductDrawer from "../../components/ProductDrawer";
 
@@ -15,6 +15,7 @@ import {
   Footer,
   Input,
   ProductDisplay,
+  EmptyCart,
 } from "./styles";
 
 function Sidebar({
@@ -58,7 +59,7 @@ function Sidebar({
       <SidebarContainer>
         <Header>
           <button onClick={handleClose}>
-            <FiArrowRight size={24} color="black" />
+            <FiArrowLeft size={24} color="black" />
           </button>
           <h3>
             {caller === "CART" ? `Sacola (${numOfitems})` : "Buscar Produtos"}
@@ -84,6 +85,12 @@ function Sidebar({
                 removeItem={removeItem}
               />
             ))}
+
+          {caller === "CART" && mCart.length === 0 && (
+            <EmptyCart>
+              <span>O seu carrinho está vazio</span>
+            </EmptyCart>
+          )}
 
           {caller === "SEARCH" &&
             productsList.length > 0 &&
