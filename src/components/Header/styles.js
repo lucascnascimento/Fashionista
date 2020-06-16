@@ -20,7 +20,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  margin: 5px 20px;
+  margin: 5px 4px;
   position: relative;
 
   @media ${device.biggerThanMedium} {
