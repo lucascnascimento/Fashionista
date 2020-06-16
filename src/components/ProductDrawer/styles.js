@@ -13,17 +13,20 @@ export const ProductDrawerCard = styled.li`
 export const CardMain = styled.section`
   display: flex;
   padding-left: 8px;
+`;
 
+export const ImgWrapper = styled.div`
+  max-width: 110px;
   & img {
     width: 100%;
-    max-width: 110px;
+    height: auto;
   }
 `;
 
 export const CardGrid = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 1fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
   column-gap: 12px;
   row-gap: 4px;
   width: 100%;

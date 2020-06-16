@@ -11,6 +11,7 @@ import {
   CardPrice,
   CardInstallments,
   RemoveButton,
+  ImgWrapper,
 } from "./styles";
 
 import img from "../../assets/images/imgNaoDisponivel.png";
@@ -19,7 +20,9 @@ function ProductDrawer({ item, caller, removeItem }) {
   return (
     <ProductDrawerCard>
       <CardMain>
-        <img src={item.image || img} alt={item.name} />
+        <ImgWrapper>
+          <img src={item.image || img} alt={item.name} />
+        </ImgWrapper>
         <CardGrid>
           <CardTitle>{item.name}</CardTitle>
 
