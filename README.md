@@ -1,68 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Be The Hero
 
-## Available Scripts
+Fashionista é um e-commerce de roupas femininas criado como projeto final da aceleração Dev React da [Codenation](https://www.codenation.dev/). Os pontos principais do projeto e principais aprendizados são:
 
-In the project directory, you can run:
+<ul>
+  <li>Request de produtos à um endpoint de uma RestAPI</li>
+  <li>Uso do Redux para controlar o estado global da aplicação</li>
+  <li>Uso de Styled Components para estilazar a aplicação</li>
+  <li>Desenvolvimento mobile First</li>
+</ul>
 
-### `yarn start`
+Para visualizar o projeto em funcionamento [clique aqui](https://lucas-codenation-fashionista.netlify.app/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h4  align="center">
+  Fashionista
+</h4>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<p  align="center">
+<a  href="#computer-tecnologias"> 💻 Tecnologias</a>&nbsp&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a  href="#-preview">💜 Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+<a  href="#-getting-started">🤠 Getting Started </a>
+</p>
 
-### `yarn test`
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2a46f293-016d-4f35-a595-58f51ce95ab3/deploy-status)](https://app.netlify.com/sites/lucas-codenation-fashionista/deploys)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## :computer: Tecnologias
 
-### `yarn build`
+- [React Js](https://pt-br.reactjs.org/)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React Router Dom](https://reacttraining.com/react-router/web/guides/quick-start)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- [Redux](https://redux.js.org/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Axios](https://github.com/axios/axios)
 
-### `yarn eject`
+## 💜 Preview
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<h3  align="center">
+	Web
+</h3>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p  align="center">
+  <img  alt="Home"  src=".github/Screenshot from 2020-06-17 14-58-12.png"  width="90%">
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p  align="center">
+  <img  alt="Home"  src=".github/Screenshot from 2020-06-17 14-58-42.png"  width="90%">
+</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<p  align="center">
+  <img  alt="Product"  src=".github/Screenshot from 2020-06-17 14-58-59.png"  width="90%">
+</p>
 
-## Learn More
+<p  align="center">
+  <img  alt="Search"  src=".github/Screenshot from 2020-06-17 14-59-17.png"  width="90%">
+</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p  align="center">
+  <img  alt="Cart"  src=".github/Screenshot from 2020-06-17 14-59-32.png"  width="90%">
+</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h3  align="center">
+	Mobile
+</h3>
 
-### Code Splitting
+<p  align="center">
+  <img  alt="Home"  src=".github/Screenshot from 2020-06-17 15-10-34.png"  width="90%">
+</p>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<p  align="center">
+  <img  alt="Home"  src=".github/Screenshot from 2020-06-17 15-10-57.png"  width="90%">
+</p>
 
-### Analyzing the Bundle Size
+<p  align="center">
+  <img  alt="Product"  src=".github/Screenshot from 2020-06-17 15-11-14.png"  width="90%">
+</p>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+<p  align="center">
+  <img  alt="Search"  src=".github/Screenshot from 2020-06-17 15-11-35.png"  width="90%">
+</p>
 
-### Making a Progressive Web App
+<p  align="center">
+  <img  alt="Cart"  src=".github/Screenshot from 2020-06-17 15-11-48.png"  width="90%">
+</p>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## 🤠 Getting Started
 
-### Advanced Configuration
+> OBS: pode-se utilizar o gerenciador de pacotes npm ou o yarn para rodar os comandos abaixo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Execute `npm install` na pasta do projeto.
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Execute `npm start` para rodar o app em modo de denvolvimento. Acesse via browser através da URL [http://localhost:3000](http://localhost:3000).
