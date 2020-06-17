@@ -1,4 +1,4 @@
-# Be The Hero
+# Fashionista
 
 Fashionista é um e-commerce de roupas femininas criado como projeto final da aceleração Dev React da [Codenation](https://www.codenation.dev/). Os principais pontos do projeto e principais aprendizados foram:
 
