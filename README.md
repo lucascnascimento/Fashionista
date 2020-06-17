@@ -1,11 +1,11 @@
 # Be The Hero
 
-Fashionista é um e-commerce de roupas femininas criado como projeto final da aceleração Dev React da [Codenation](https://www.codenation.dev/). Os pontos principais do projeto e principais aprendizados são:
+Fashionista é um e-commerce de roupas femininas criado como projeto final da aceleração Dev React da [Codenation](https://www.codenation.dev/). Os principais pontos do projeto e principais aprendizados foram:
 
 <ul>
   <li>Request de produtos à um endpoint de uma RestAPI</li>
   <li>Uso do Redux para controlar o estado global da aplicação</li>
-  <li>Uso de Styled Components para estilazar a aplicação</li>
+  <li>Uso de Styled Components para estilizar a aplicação</li>
   <li>Desenvolvimento mobile First</li>
 </ul>
 
@@ -27,11 +27,13 @@ Para visualizar o projeto em funcionamento [clique aqui](https://lucas-codenatio
 
 - [React Js](https://pt-br.reactjs.org/)
 
+- [Axios](https://github.com/axios/axios)
+
 - [React Router Dom](https://reacttraining.com/react-router/web/guides/quick-start)
 
 - [Redux](https://redux.js.org/)
 
-- [Axios](https://github.com/axios/axios)
+- [Styled Components](https://styled-components.com/)
 
 ## 💜 Preview
 
