@@ -1,8 +1,8 @@
 import { SET_CURRENT_PRODUCT, LOAD_PRODUCTS_LIST } from "../constants";
 
 const initialState = {
-  products: {},
-  currentProduct: {},
+  products: [],
+  currentProduct: null,
 };
 
 function products(state = initialState, action) {
@@ -14,15 +14,11 @@ function products(state = initialState, action) {
     }
 
     case SET_CURRENT_PRODUCT: {
-      const product = action.payload;
-
-      const currentProduct = state.find((p) => p.name === product);
-
-      return { ...state, currentProduct };
+      return { ...state, currentProduct: action.payload };
     }
 
     default:
-      break;
+      return state;
   }
 }
 

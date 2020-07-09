@@ -7,9 +7,9 @@ export function loadProducts(products) {
   };
 }
 
-export function setProduct(productName) {
+export function setCurrentProduct(productData) {
   return {
     type: SET_CURRENT_PRODUCT,
-    payload: productName,
+    payload: productData,
   };
 }
