@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { addItem } from "../../store/modules/cart/actions";
-
-import api from "../../services/api";
 
 import Loading from "../../components/Loading";
 
@@ -26,7 +24,7 @@ import imgNotAvailable from "../../assets/images/imgNaoDisponivel.png";
 
 import { ArrowBack } from "@styled-icons/material";
 
-function ProductPage({ addItem }) {
+function ProductPage({ addItem, currentProduct }) {
   const { name } = useParams();
   const [product, setProduct] = useState({});
   const [productSize, setProductSize] = useState("");
@@ -34,15 +32,8 @@ function ProductPage({ addItem }) {
 
   // Load product from API
   useEffect(() => {
-    async function fetchProduct() {
-      const response = await api.get(
-        `https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog?search=${name}`
-      );
-      setProduct(response.data[0]);
-    }
-
-    fetchProduct();
-  }, [name]);
+    setProduct(currentProduct);
+  }, [currentProduct]);
 
   // Add item to cart
   function handleAddItem(e) {
@@ -130,4 +121,8 @@ function ProductPage({ addItem }) {
   );
 }
 
-export default connect(null, { addItem })(ProductPage);
+const mapStateToProps = (state) => ({
+  currentProduct: state.products.currentProduct,
+});
+
+export default connect(mapStateToProps, { addItem })(ProductPage);
