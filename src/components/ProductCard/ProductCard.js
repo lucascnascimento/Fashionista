@@ -1,6 +1,4 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { setCurrentProduct } from "../../store/modules/products/actions";
 
 import img from "../../assets/images/imgNaoDisponivel.png";
 
@@ -15,14 +13,8 @@ import {
 } from "./styles";
 
 function ProductCard({ data }) {
-  const dispatch = useDispatch();
-
-  function handleClick() {
-    dispatch(setCurrentProduct(data));
-  }
-
   return (
-    <Card to={`/product/${data.name}`} onClick={handleClick}>
+    <Card to={`/product/${data.name}`}>
       <ImgWrapper>
         {data.image ? (
           <img src={data.image} alt={data.name} />

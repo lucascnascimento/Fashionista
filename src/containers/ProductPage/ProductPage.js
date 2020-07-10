@@ -1,9 +1,11 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { addItem } from "../../store/modules/cart/actions";
 
 import Loading from "../../components/Loading";
+
+import api from "../../services/api";
 
 import {
   Container,
@@ -24,7 +26,7 @@ import imgNotAvailable from "../../assets/images/imgNaoDisponivel.png";
 
 import { ArrowBack } from "@styled-icons/material";
 
-function ProductPage({ addItem, currentProduct }) {
+function ProductPage({ addItem }) {
   const { name } = useParams();
   const [product, setProduct] = useState({});
   const [productSize, setProductSize] = useState("");
@@ -32,8 +34,15 @@ function ProductPage({ addItem, currentProduct }) {
 
   // Load product from API
   useEffect(() => {
-    setProduct(currentProduct);
-  }, [currentProduct]);
+    async function fetchData() {
+      const response = await api.get();
+
+      const currentProduct = response.data.find((p) => p.name === name);
+      setProduct(currentProduct);
+    }
+
+    fetchData();
+  }, [name]);
 
   // Add item to cart
   function handleAddItem(e) {
@@ -121,8 +130,4 @@ function ProductPage({ addItem, currentProduct }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  currentProduct: state.products.currentProduct,
-});
-
-export default connect(mapStateToProps, { addItem })(ProductPage);
+export default connect(null, { addItem })(ProductPage);
