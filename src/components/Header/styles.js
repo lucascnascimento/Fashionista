@@ -11,6 +11,8 @@ export const Topbar = styled.div`
   width: 100%;
   padding: 20px 0;
   background: ${(props) => (props.isBackground ? "white" : "transparent")};
+  box-shadow: ${(props) =>
+    props.isBackground && " 0px 0px 8px -1px rgba(0,0,0,0.75)"};
   transition: background 0.4s ease-out;
 `;
 
